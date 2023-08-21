@@ -1,12 +1,12 @@
 <?php
 
 $database = require_once 'bootstrap.php';
-require_once 'Task.php';
 
+$routs = [
+    '' => 'controllers/index.php',
+    'about' => 'controllers/about.php',
+    'about/culture' => 'controllers/about-culture.php',
+    'contact' => 'controllers/contact.php'
 
-
-$tasks = $database->selectAll('todos');
-
-require_once 'index.view.php';
-
+];
 ?>
