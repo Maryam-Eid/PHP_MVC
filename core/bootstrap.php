@@ -1,13 +1,14 @@
 <?php
 
-require 'core/database/connection.php';
-require 'core/database/queryBuilder.php';
-require 'core/request.php';
+use App\core\App;
 
-$config = require 'config.php';
+App::bind('config', require 'config.php');
 
-require 'core/router.php';
+App::bind('database' , new QueryBuilder(
+    Connection::make(App::get('config')['database'])
+));
 
-return new QueryBuilder(
-    Connection::make($config['database'])
-);
+function view($name, $data = []){
+    extract($data);
+    return require "views/($name}.view.php";
+}

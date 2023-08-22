@@ -8,15 +8,11 @@
     <title>ToDo</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="about.view.php">About Page</a> </li>
-            <li><a href="contact.view.php">Contact Page</a> </li>
-        </ul>
-    </nav>
+
+    <?php require('partials/nav.php');?>
     <h1>My Tasks</h1>
     <h2>
-        <?php foreach ($tasks as $task) : ?>
+        <?php foreach ($tasks as $task): ?>
             <li>
                 <?php if ($task->completed) : ?>
                     <strike><?= $task->description; ?></strike>
@@ -26,5 +22,7 @@
             </li>
         <?php endforeach; ?>
     </h2>
+
+
 </body>
 </html>

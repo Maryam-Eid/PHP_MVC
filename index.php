@@ -1,9 +1,13 @@
 <?php
 
-$database = require 'core/bootstrap.php';
-$tasks = $database->selectAll('todos');
+require 'vendor/autoload.php';
+require 'core/bootstrap.php';
 
-require Router::load('routes.php')
-    ->direct(Request::uri());
+use App\core\Router;
+use App\core\Request;
+
+
+Router::load('routes.php')
+    ->direct(Request::uri(), Request::method());
 
 ?>

@@ -1,8 +1,6 @@
 <?php
 
-$router->define([
-    '' => 'controllers/index.php',
-    'about' => 'controllers/about.php',
-    'about/culture' => 'controllers/about-culture.php',
-    'contact' => 'controllers/contact.php'
-]);
+$router->get('', 'pagesController@home');
+$router->get('about', 'pagesController@about');
+$router->get('contact', 'pagesController@contact');
+

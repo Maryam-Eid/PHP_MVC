@@ -8,6 +8,7 @@
     <title>Contact us</title>
 </head>
 <body>
-<h1>Contact Us</h1>
+    <?php require('partials/nav.php');?>
+    <h1>Contact Us</h1>
 </body>
 </html>

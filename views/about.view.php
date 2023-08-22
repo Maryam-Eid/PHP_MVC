@@ -8,6 +8,7 @@
     <title>About us</title>
 </head>
 <body>
+    <?php require('partials/nav.php');?>
     <h1>About Us</h1>
 </body>
 </html>
