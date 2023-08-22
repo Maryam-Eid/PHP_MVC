@@ -1,12 +1,12 @@
 <?php
 
-use database\Connection;
-use database\QueryBuilder;
+require 'core/database/connection.php';
+require 'core/database/queryBuilder.php';
+require 'core/request.php';
 
-$config = require_once 'database/config.php';
+$config = require 'config.php';
 
-require_once 'database/connection.php';
-require_once 'database/queryBuilder.php';
+require 'core/router.php';
 
 return new QueryBuilder(
     Connection::make($config['database'])

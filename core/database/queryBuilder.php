@@ -1,6 +1,5 @@
 <?php
 
-namespace database;
 class QueryBuilder
 {
 

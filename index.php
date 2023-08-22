@@ -1,12 +1,9 @@
 <?php
 
-$database = require_once 'bootstrap.php';
+$database = require 'core/bootstrap.php';
+$tasks = $database->selectAll('todos');
 
-$routs = [
-    '' => 'controllers/index.php',
-    'about' => 'controllers/about.php',
-    'about/culture' => 'controllers/about-culture.php',
-    'contact' => 'controllers/contact.php'
+require Router::load('routes.php')
+    ->direct(Request::uri());
 
-];
 ?>
